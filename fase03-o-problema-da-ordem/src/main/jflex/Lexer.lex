@@ -68,13 +68,13 @@ OversizedIdentifier = {Letter}({Letter}|{Digit}|_){32,}
     /* TODO 5: Operadores de Atribuição e Relacionais (=, ==, !=, <, >, <=, >=) */
     /* CUIDADO COM A ORDEM! O JFlex casa a regra que aparece primeiro se houver empate de tamanho. */
     /* Coloque os operadores duplos antes dos simples! */
-    "="             { return symbol(sym.ASSIGN); }
     "=="            { return symbol(sym.REL_OP, yytext()); }
     "!="            { return symbol(sym.REL_OP, yytext()); }
-    "<"             { return symbol(sym.REL_OP, yytext()); }
-    ">"             { return symbol(sym.REL_OP, yytext()); }
     "<="            { return symbol(sym.REL_OP, yytext()); }
     ">="            { return symbol(sym.REL_OP, yytext()); }
+    "<"             { return symbol(sym.REL_OP, yytext()); }
+    ">"             { return symbol(sym.REL_OP, yytext()); }
+    "="             { return symbol(sym.ASSIGN); }
 
     /* TODO 6: Operadores Matemáticos (+, -, *, /, %) */
     /* Dica: "+" | "-" retornam Tag.ADD_OP. Os outros retornam Tag.MUL_OP */
